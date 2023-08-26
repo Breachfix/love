@@ -1,0 +1,135 @@
+
+.register{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom,
+    rgba(0,0,0,0) 0%, 
+    rgba(0,0,0,0.1)100%), 
+    url("https://firebasestorage.googleapis.com/v0/b/joyful-a1987.appspot.com/o/breach%20without.svg?alt=media&token=43df7825-0a29-43bd-a103-713ba69de0c3");
+    background-size: cover;
+    position: relative;
+
+    .top{
+        .wrapper{
+            padding: 20px 50px ;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .logo{
+                height: 70px;
+            }
+
+            .loginButton{
+                background-color: red;
+                border: none;
+                color: white;
+                border-radius: 5px;
+                padding: 5px 15px;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            
+        }
+
+    }
+    .container{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+       
+
+        h1{
+            font-size: 50px;
+            margin: 20px;
+
+        }
+        h2{
+            margin: 20px;
+        }
+
+        p{
+            font-size: 20px;
+            margin: 20px;
+        }
+
+        .input{
+            width: 50%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            
+            height: 50px;
+            border-radius: 5px;
+            
+        }
+
+        input{
+            flex:9;
+            height: 100%;
+            border: none;
+            padding: 0 10px;
+            justify-content: center;
+            
+        }
+
+        .registerButton{
+            flex: 3;
+            height: 100%;
+            background-color: red;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+           
+        }
+
+
+    }
+    @media (max-width: 1024px) and (min-width: 768px) {
+        .container h1 {
+            font-size: 40px;
+        }
+    
+        .container p {
+            font-size: 18px;
+        }
+    
+        .container .input {
+            width: 70%;
+        }
+    
+        .container .registerButton {
+            font-size: 20px;
+        }
+    }
+    
+    /* Mobile Phones */
+    @media (max-width: 767px) {
+        .container h1 {
+            font-size: 30px;
+        }
+    
+        .container p {
+            font-size: 16px;
+        }
+    
+        .container .input {
+            width: 90%;
+        }
+    
+        .container .registerButton {
+            font-size: 18px;
+        }
+    }
+
+}

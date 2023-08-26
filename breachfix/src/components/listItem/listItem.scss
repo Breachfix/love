@@ -1,0 +1,224 @@
+.listItem{
+    width: 225px;
+    height: 120px;
+    background-color:var(--main-color);
+    margin-right: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    color: white;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background-position: center;
+
+    }
+    video{
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:hover{
+        width: 325px;
+        height: 300px;
+        position: absolute;
+        top: -150px;
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(255,255,255,0.07); 
+        box-shadow: 0px 0px 15px 0px rgba(255,255,255,0.07); 
+        border-radius: 5px;
+        img{
+            display: none;
+          }
+    }
+
+    .itemInfo {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        margin-top: 170px;
+    }
+    .icons{
+        display: flex;
+        margin-bottom: 10px;
+        .icon{
+            border: 2px solid white;
+            padding: 5px;
+            border-radius: 50%;
+            margin-right:  10px;
+            font-size: 9px;
+        }
+
+    }
+    .itemInfoTop{
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 9px;
+        font-weight: 600;
+        color: gray;
+
+        .limit{
+            border: 1px solid gray;
+            padding: 1px 3px;
+            margin: 0 10px;
+        }
+    }
+    .desc{
+        font-size: 9px;
+        margin-bottom: 10px;
+    }
+    .genre{
+        font-size: 10px;
+        color: lightgray;
+    }
+
+
+    @media (max-width: 360px) {
+        width: 120px; 
+        height: 70px; 
+    
+        &:hover {
+          width: 160px; 
+          height: 120px; 
+          
+          position: static;  // Disable absolute positioning on mobile
+      top: 0;
+      img {
+        display: block;
+      }
+        }
+    
+        .itemInfo {
+          margin-top: 90px;
+        }
+    
+        .icons .icon {
+          font-size: 5px;
+          margin-right: 4px;
+        }
+    
+        .itemInfoTop, .desc, .genre {
+          font-size: 5px; 
+        }
+    
+        .itemInfoTop .limit {
+          margin: 0 4px;
+        }
+      }
+    
+      // For medium phones
+      @media (min-width: 361px) and (max-width: 480px) {
+        width: 140px; 
+        height: 80px; 
+    
+        &:hover {
+          width: 190px; 
+          height: 140px; 
+          position: static;  // Disable absolute positioning on mobile
+      top: 0;
+      img {
+        display: block;
+      }
+        }
+    
+        .itemInfo {
+          margin-top: 100px;
+        }
+    
+        .icons .icon {
+          font-size: 6px;
+          margin-right: 5px;
+        }
+    
+        .itemInfoTop, .desc, .genre {
+          font-size: 6px; 
+        }
+    
+        .itemInfoTop .limit {
+          margin: 0 5px;
+        }
+      }
+    
+      // For large phones / phablets
+      @media (min-width: 481px) and (max-width: 600px) {
+        width: 160px; 
+        height: 90px; 
+    
+        &:hover {
+          width: 210px; 
+          height: 160px; 
+          
+          position: static;  // Disable absolute positioning on mobile
+      top: 0;
+      img {
+        display: block;
+      }
+        }
+    
+        .itemInfo {
+          margin-top: 110px;
+        }
+    
+        .icons .icon {
+          font-size: 7px;
+          margin-right: 6px;
+        }
+    
+        .itemInfoTop, .desc, .genre {
+          font-size: 7px; 
+        }
+    
+        .itemInfoTop .limit {
+          margin: 0 6px;
+        }
+      }
+
+      @media (max-width: 780px) {
+        width: 150px; // adjust the width for mobile
+        height: 80px; // adjust the height for mobile
+    
+        &:hover {
+          width: 225px; // adjust the hover width for mobile
+          height: 120px; // adjust the hover height for mobile
+          position: static; 
+          top: 0; // adjust hover top for mobile
+          img {
+            display: block;
+          }
+        }
+    
+        .itemInfo {
+          margin-top: 100px; // adjust as per mobile need
+        }
+    
+        .icons .icon {
+          font-size: 6px; // decrease icon size for mobile
+          margin-right: 5px; // decrease margin
+        }
+    
+        .itemInfoTop {
+          font-size: 6px; // decrease font size for mobile
+          .limit {
+            margin: 0 5px; // adjust margin
+          }
+        }
+    
+        .desc {
+          font-size: 6px; // decrease description font size for mobile
+        }
+    
+        .genre {
+          font-size: 7px; // adjust genre font size for mobile
+        }
+      }
+    
+}
+
+
+
+
