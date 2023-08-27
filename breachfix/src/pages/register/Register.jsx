@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Register() {
     const navigate = useNavigate();
+    
 
 
     const [email,setEmail] =  useState("")
@@ -32,7 +33,7 @@ export default function Register() {
         
         
     try {
-        await axiosInstances.post("auth/register", { email, username, password });
+        await axiosInstance.post("auth/register", { email, username, password });
         navigate("/login");
     } catch (err) {}
     }
