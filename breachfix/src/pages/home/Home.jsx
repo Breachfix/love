@@ -20,9 +20,10 @@ const Home = ({type}) => {
         const res = await axiosInstance.get(
           `lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""
         }`,{
-            headers:{
-              token:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGVmYzczOTdjMDI1OWJkZmNkYWVmOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5MjU0NDcxMSwiZXhwIjoxNjkyOTc2NzExfQ.o2PrkQ4QJ11qVc1l4uhfSx5G9fXzVgteiKxV1KcsVkU"
-            }
+          headers: {
+            token:
+              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
+          },
           }
         );
         setLists(res.data);

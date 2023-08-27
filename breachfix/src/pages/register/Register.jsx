@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Register() {
     const navigate = useNavigate();
-    const axiosInstance = axios.create({
-        baseURL:process.env.REACT_APP_API_URL
-      });
+
 
     const [email,setEmail] =  useState("")
     const [password, setPpassword] =  useState("")
@@ -18,6 +16,9 @@ export default function Register() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const usernameRef = useRef();
+    const axiosInstance = axios.create({
+        baseURL:process.env.REACT_APP_API_URL
+      });
     
 
     const handleStart = () =>{
@@ -27,6 +28,8 @@ export default function Register() {
         e.preventDefault();
         setPpassword(passwordRef.current.value)
         setUsername(usernameRef.current.value);
+
+        
         
     try {
         await axiosInstances.post("auth/register", { email, username, password });
