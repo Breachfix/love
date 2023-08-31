@@ -6,7 +6,7 @@ import { MovieContext } from "../../context/movieContext/MovieContext";
 
 export default function Product() {
 
-  const { movies, dispatch} = useContext(MovieContext);
+  const { movies} = useContext(MovieContext);
 
   const {id} = useParams();
   const movie = movies.find((_movie)=> {

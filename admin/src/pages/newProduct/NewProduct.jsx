@@ -13,6 +13,13 @@ export default function NewProduct() {
   const [trailer, setTrailer] = useState(null);
   const [video, setVideo] = useState(null);
   const [uploaded, setUploaded] = useState(0);
+  const [selectedGenre, setSelectedGenre] = useState("");
+  const [genreInputValue, setGenreInputValue] = useState("");
+  const handleGenreChange = (event) => {
+    const selectedGenre = event.target.value;
+    setSelectedGenre(selectedGenre);
+    setGenreInputValue(selectedGenre);
+  };
 
 
   const { dispatch } = useContext(MovieContext);
@@ -67,7 +74,7 @@ export default function NewProduct() {
     e.preventDefault();
     createMovie(movie, dispatch);
   };
-
+  console.log("Uploaded count:", uploaded);
   return (
     <div className="newProduct">
       <h1 className="addProductTitle">New Movie</h1>
@@ -103,7 +110,7 @@ export default function NewProduct() {
           <label>Title</label>
           <input
             type="text"
-            placeholder="John Wick"
+            placeholder="Ellen G White"
             name="title"
             onChange={handleChange}
           />
@@ -127,14 +134,41 @@ export default function NewProduct() {
           />
         </div>
         <div className="addProductItem">
-          <label>Genre</label>
-          <input
-            type="text"
-            placeholder="Genre"
-            name="genre"
-            onChange={handleChange}
-          />
-        </div>
+      <label>Genre</label>
+      <select
+        name="genre"
+        id="genre"
+        onChange={handleGenreChange}
+        value={selectedGenre}
+      >
+        <option value="">Select a Genre</option>
+        <option value= "Love">Love</option>
+          <option value= "Three Angels">Three Angels</option>
+          <option value= "Temperance">Temperance</option>
+          <option value= "Breach Repairers">Breach Repaires</option>
+          <option value= "Changed Life">Changed Life</option>
+          <option value= "Health">Health</option>
+          <option value= "Prophecy">Prophecy</option>
+          <option value= "Sanctuary">Sanctuary</option>
+          <option value= "Hymns">Hymns</option>
+          <option value= "Songs">Songs</option>
+          <option value= "Sabbath">Sabbath</option>
+          <option value= "Faith">Faith</option>
+          <option value= "Hope">Hope</option>
+          <option value= "Inspirational">Inspirational</option>
+          <option value= "Documentary">Documentary</option>
+      </select>
+
+      <div className="genreInputContainer">
+        <label>Genre Name</label>
+        <input
+          type="text"
+          placeholder="Genre"
+          value={genreInputValue}
+          onChange={(e) => setGenreInputValue(e.target.value)}
+        />
+      </div>
+    </div>
         <div className="addProductItem">
           <label>Duration</label>
           <input

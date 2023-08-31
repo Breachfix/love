@@ -1,67 +1,55 @@
-// export const getMoviesStart = () => ({
-//     type: "GET_MOVIES_START",
-//   });
+export const getUsersStart = () => ({
+    type: "GET_USERS_START",
+  });
   
-//   export const getMoviesSuccess = (movies) => ({
-//     type: "GET_MOVIES_SUCCESS",
-//     payload: movies,
-//   });
+  export const getUsersSuccess = (users) => ({
+    type: "GET_USERS_SUCCESS",
+    payload: users,
+  });
   
-//   export const getMoviesFailure = () => ({
-//     type: "GET_MOVIES_FAILURE",
-//   });
+  export const getUsersFailure = () => ({
+    type: "GET_USERS_FAILURE",
+  });
   
-//   export const fetchMovieByIdStart = () => ({
-//     type: "GET_MOVIE_BY_ID_START",
-//   });
-  
-//   export const fetchMovieByIdSuccess = (movies) => ({
-//     type: "GET_MOVIE_BY_ID_SUCCESS",
-//     payload: movies,
-//   });
-  
-//   export const fetchMovieByIdFailure = () => ({
-//     type: "GET_MOVIE_BY_ID_FAILURE",
-//   });
 
 
 
 
-//   export const createMovieStart = () => ({
-//     type: "CREATE_MOVIE_START",
-//   });
+  export const createUserStart = () => ({
+    type: "CREATE_USER_START",
+  });
   
-//   export const createMovieSuccess = (movie) => ({
-//     type: "CREATE_MOVIE_SUCCESS",
-//     payload: movie,
-//   });
+  export const createUserSuccess = (user) => ({
+    type: "CREATE_USER_SUCCESS",
+    payload: user,
+  });
   
-//   export const createMovieFailure = () => ({
-//     type: "CREATE_MOVIE_FAILURE",
-//   });
+  export const createUserFailure = () => ({
+    type: "CREATE_USER_FAILURE",
+  });
   
-//   export const updateMovieStart = () => ({
-//     type: "UPDATE_MOVIE_START",
-//   });
+  export const updateUserStart = () => ({
+    type: "UPDATE_USER_START",
+  });
   
-//   export const updateMovieSuccess = (movie) => ({
-//     type: "UPDATE_MOVIE_SUCCESS",
-//     payload: movie,
-//   });
+  export const updateUserSuccess = (user) => ({
+    type: "UPDATE_USER_SUCCESS",
+    payload: user,
+  });
   
-//   export const updateMovieFailure = () => ({
-//     type: "UPDATE_MOVIE_FAILURE",
-//   });
+  export const updateUserFailure = () => ({
+    type: "UPDATE_USER_FAILURE",
+  });
   
-//   export const deleteMovieStart = () => ({
-//     type: "DELETE_MOVIE_START",
-//   });
+  export const deleteUserStart = () => ({
+    type: "DELETE_USER_START",
+  });
   
-//   export const deleteMovieSuccess = (id) => ({
-//     type: "DELETE_MOVIE_SUCCESS",
-//     payload: id,
-//   });
+  export const deleteUserSuccess = (id) => ({
+    type: "DELETE_USER_SUCCESS",
+    payload: id,
+  });
   
-//   export const deleteMovieFailure = () => ({
-//     type: "DELETE_MOVIE_FAILURE",
-//   });
+  export const deleteUserFailure = () => ({
+    type: "DELETE_USER_FAILURE",
+  });

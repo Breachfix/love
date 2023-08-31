@@ -6,10 +6,20 @@ import {
   PhoneAndroid,
   Publish,
 } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./user.css";
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext/UserContext";
 
 export default function User() {
+ // const { dispatch } = useContext(UserContext);
+  const { users} = useContext(UserContext);
+
+  const {id} = useParams();
+  const user = users.find((_user)=> {
+    return _user._id === id;
+  });
+  console.log(id);
   return (
     <div className="user">
       <div className="userTitleContainer">
@@ -27,8 +37,7 @@ export default function User() {
               className="userShowImg"
             />
             <div className="userShowTopTitle">
-              <span className="userShowUsername">Anna Becker</span>
-              <span className="userShowUserTitle">Software Engineer</span>
+              <span className="userShowUsername">{user.username}</span>
             </div>
           </div>
           <div className="userShowBottom">
@@ -48,7 +57,7 @@ export default function User() {
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99@gmail.com</span>
+              <span className="userShowInfoTitle">{user.email}</span>
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
@@ -69,7 +78,7 @@ export default function User() {
                 />
               </div>
               <div className="userUpdateItem">
-                <label>Full Name</label>
+                <label>{user.username}</label>
                 <input
                   type="text"
                   placeholder="Anna Becker"
@@ -77,7 +86,7 @@ export default function User() {
                 />
               </div>
               <div className="userUpdateItem">
-                <label>Email</label>
+                <label>{user.email}</label>
                 <input
                   type="text"
                   placeholder="annabeck99@gmail.com"

@@ -6,7 +6,6 @@ import List from '../../components/list/List';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios'; 
-
 const Home = ({type}) => {
   const [lists, setLists] =useState([]);
   const [genre, setGenre] =useState(null);

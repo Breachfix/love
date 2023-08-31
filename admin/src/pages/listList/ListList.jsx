@@ -10,9 +10,7 @@ import { useParams } from 'react-router-dom';
 export default function ListList() {
   let { id } = useParams();
   const { lists, dispatch } = useContext(ListContext);
-  const axiosInstance = axios.create({
-    baseURL:process.env.REACT_APP_API_URL
-  });
+ 
 
   useEffect(() => {
     getLists(dispatch);

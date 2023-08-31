@@ -2,28 +2,33 @@ import React, { useState, useEffect } from "react";
 import "./widgetSm.css";
 import { Visibility } from "@material-ui/icons";
 import axios from "axios";
+const axiosInstance = axios.create({
+  baseURL:process.env.REACT_APP_API_URL
+});
 
 export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);
+  
 
   useEffect(() => {
     const getNewUsers = async () => {
       try {
-        const res = await axios.get("/users?new=true", {
+        const res = await axiosInstance.get("/users?new=true", {
           headers: {
             token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
           },
         });
-
+  
         setNewUsers(res.data);
       } catch (err) {
         console.log(err);
       }
     };
-
+  
     getNewUsers();
-  }, []);
-
+  }, []); // Empty dependency array
+  
+  console.error();
   return (
     <div className="widgetSm">
       <span className="widgetSmTitle">New Join Members</span>

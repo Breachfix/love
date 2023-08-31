@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 export default function List() {
 
-  const {lists,dispatch} = useContext(ListContext);
+  const {lists} = useContext(ListContext);
 
   const {listId} = useParams();
   const list = lists.find((_list)=> {

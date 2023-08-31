@@ -5,7 +5,6 @@ import { MovieContext } from "../../context/movieContext/MovieContext";
 import { ListContext } from "../../context/listContext/ListContext";
 import { createList } from "../../context/listContext/apiCalls";
 import { useNavigate } from "react-router-dom";
-
 export default function NewList() {
   const [list, setList] = useState(null);
   const navigate = useNavigate();
