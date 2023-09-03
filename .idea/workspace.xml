@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09d3e1ca-913a-4023-86be-8b540494b856" name="Changes" comment="doneb">
-      <change beforePath="$PROJECT_DIR$/admin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/admin/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/service/service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/breachfix/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/breachfix/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="09d3e1ca-913a-4023-86be-8b540494b856" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1693459652689</updated>
       <workItem from="1693459655897" duration="4881000" />
-      <workItem from="1693710174327" duration="6899000" />
+      <workItem from="1693710174327" duration="7318000" />
     </task>
     <task id="LOCAL-00001" summary="i Changed few thing with aws permission">
       <created>1693460043518</created>
@@ -121,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693768532842</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="doneb">
+      <created>1693770459405</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693770459405</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +130,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="i Changed few thing with aws permission" />
     <MESSAGE value="done" />
-    <option name="LAST_COMMIT_MESSAGE" value="done" />
+    <MESSAGE value="doneb" />
+    <option name="LAST_COMMIT_MESSAGE" value="doneb" />
   </component>
 </project>
