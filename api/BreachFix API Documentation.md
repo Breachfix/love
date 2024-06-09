@@ -1,4 +1,4 @@
-Sure, here is the documentation in Markdown format:
+
 
 ```markdown
 # BreachFix API Documentation
@@ -10,7 +10,7 @@ Welcome to the BreachFix API documentation. This API allows users to manage movi
 ## Base URL
 
 ```
-http://db.breachfix.com/api
+http://your-api-base-url.com/api
 ```
 
 ## Authentication
@@ -380,11 +380,11 @@ SECRET_KEY=your_secret_key
 
 #### Get All Lists
 
-- **URL:** `/lists`
+- **
+
+URL:** `/lists`
 - **Method:** `GET`
 - **Description:** Get all lists.
-
-
 - **Headers:**
   ```json
   {
@@ -416,60 +416,57 @@ SECRET_KEY=your_secret_key
 Here's an example of how to use the Fetch API to interact with the API:
 
 ```javascript
-// Function to fetch all movies (Admin only)
-async function fetchAllMovies() {
-    const response = await fetch('http://your-api-base-url.com/api/movies', {
-        headers: {
-            'Authorization': 'Bearer your_jwt_token'
-        }
-    });
+import axios from "axios";
 
-    if (response.ok) {
-        const movies = await response.json();
-        console.log(movies);
-    } else {
-        console.error('Failed to fetch movies');
-    }
-}
+// Create an axios instance with the base URL
+const axiosInstance = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+});
+
+// Function to fetch all movies (Admin only)
+export const fetchAllMovies = async (dispatch) => {
+  dispatch(loginStart());
+  try {
+    const response = await axiosInstance.get("/movies", {
+      headers: {
+        Authorization: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+      },
+    });
+    dispatch(loginSuccess(response.data));
+  } catch (error) {
+    dispatch(loginFailure());
+  }
+};
 
 // Function to fetch a random movie
-async function fetchRandomMovie() {
-    const response = await fetch('http://your-api-base-url.com/api/movies/random', {
-        headers: {
-            'Authorization': 'Bearer your_jwt_token'
-        }
+export const fetchRandomMovie = async (type) => {
+  try {
+    const response = await axiosInstance.get(`/movies/random?type=${type}`, {
+      headers: {
+        Authorization: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+      },
     });
-
-    if (response.ok) {
-        const movie = await response.json();
-        console.log(movie);
-    } else {
-        console.error('Failed to fetch random movie');
-    }
-}
+    console.log(response.data);
+    return response.data[0];
+  } catch (error) {
+    console.error('Failed to fetch random movie:', error);
+  }
+};
 
 // Function to create a new user
-async function registerUser(username, email, password) {
-    const response = await fetch('http://your-api-base-url.com/api/auth/register', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, email, password })
-    });
-
-    if (response.ok) {
-        const newUser = await response.json();
-        console.log(newUser);
-    } else {
-        console.error('Failed to register user');
-    }
-}
+export const registerUser = async (user) => {
+  try {
+    const response = await axiosInstance.post("/auth/register", user);
+    console.log(response.data);
+  } catch (error) {
+    console.error('Failed to register user:', error);
+  }
+};
 
 // Example calls
 fetchAllMovies();
-fetchRandomMovie();
-registerUser('exampleUser', 'user@example.com', 'password123');
+fetchRandomMovie('movie');
+registerUser({ username: 'exampleUser', email: 'user@example.com', password: 'password123' });
 ```
 
 ### Notes
@@ -482,4 +479,4 @@ registerUser('exampleUser', 'user@example.com', 'password123');
 This documentation provides a detailed overview of the API endpoints and how to use them. If you have any questions or need further assistance, please contact the API support team.
 ```
 
-This Markdown file is designed to be comprehensive and user-friendly, guiding users through the process of accessing and using your API with clear examples and detailed endpoint descriptions.
+This documentation now includes a comprehensive overview of the API endpoints, example usage in JavaScript, and details on how to handle authentication and CRUD operations in a React application.
