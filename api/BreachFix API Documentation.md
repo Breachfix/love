@@ -10,7 +10,7 @@ Welcome to the BreachFix API documentation. This API allows users to manage movi
 ## Base URL
 
 ```
-http://your-api-base-url.com/api
+http://db.breachfix.com/api
 ```
 
 ## Authentication
